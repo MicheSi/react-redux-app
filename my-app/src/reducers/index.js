@@ -3,6 +3,7 @@
 const initialState = {
     isLoading: false,
     error: '',
+    amiibo: [],
     character: '',
     image: '',
     name: '',
