@@ -7,7 +7,7 @@ import {getCocktail} from '../actions';
 const Cocktail = props => {
 
     return (
-        <section>
+        <section className='cocktail'>
             <button onClick={props.getCocktail}>Get Cocktail</button>
             {!props.strDrink && !props.isLoading && (
                 <h2>Get new cocktail</h2>
@@ -22,7 +22,7 @@ const Cocktail = props => {
               />
             )}
             {props.strDrink && !props.isLoading && (
-                <div>
+                <div className='drinkCard'>
                     <h2>{props.strDrink.strDrink}</h2>
                     <img src={props.strDrink.strDrinkThumb}/>
                 </div>
