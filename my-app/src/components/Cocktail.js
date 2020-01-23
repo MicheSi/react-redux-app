@@ -5,10 +5,11 @@ import Loader from 'react-loader-spinner';
 import {getCocktail} from '../actions';
 
 const Cocktail = props => {
+
     return (
         <section>
             <button onClick={props.getCocktail}>Get Cocktail</button>
-            {!props.cocktail && !props.isLoading && (
+            {!props.strDrink && !props.isLoading && (
                 <h2>Get new cocktail</h2>
             )}
             {props.isLoading && (
@@ -20,7 +21,13 @@ const Cocktail = props => {
                 timeout={3000} //3 secs
               />
             )}
-            
+            {props.strDrink && !props.isLoading && (
+                <div>
+                    <h2>{props.strDrink.strDrink}</h2>
+                    <img src={props.strDrink.strDrinkThumb}/>
+                </div>
+                
+            )}
             
         </section>
     )
@@ -29,7 +36,8 @@ const Cocktail = props => {
 const mapStateToProps = state => ({
     isLoading: state.isLoading,
     error: state.error,
-    cocktail: state.cocktail,
+    strDrink: state.strDrink,
+    strDrinkThumb: state.strDrinkThumb
 });
 
 export default connect(mapStateToProps, {getCocktail})(Cocktail);
