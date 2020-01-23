@@ -1,17 +1,18 @@
 import axios from 'axios';
 
-export const GET_AMIIBO_START = 'GET_AMIIBO_START';
-export const GET_AMIIBO_SUCCESS = 'GET_AMIIBO_SUCCESS';
-export const GET_AMIIBO_FAIL = 'GET_AMIIBO_FAIL';
+export const GET_COCKTAIL_START = 'GET_COCKTAIL_START';
+export const GET_COCKTAIL_SUCCESS = 'GET_COCKTAIL_SUCCESS';
+export const GET_COCKTAIL_FAIL = 'GET_COCKTAIL_FAIL';
 
-export const getAmiibo = () => dispatch => {
-    dispatch({type: GET_AMIIBO_START});
+export const getCocktail = () => dispatch => {
+    dispatch({type: GET_COCKTAIL_START});
     axios
-    .get('https://www.amiiboapi.com/api/amiibo/')
-    .then(res =>
-        dispatch({type: GET_AMIIBO_SUCCESS, payload: res.data.results})    
-    )
+    .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then(res => {
+        console.log('get data', res.data.drinks)
+        dispatch({type: GET_COCKTAIL_SUCCESS, payload: res.data.drinks})
+    })
     .catch(err =>
-        dispatch({type: GET_AMIIBO_FAIL, payload: err})
+        dispatch({type: GET_COCKTAIL_FAIL, payload: err})
     )
 };
