@@ -1,0 +1,46 @@
+html, body {
+  box-sizing: border-box;
+  color: white;
+}
+
+html {
+  background-image: url('./barBG.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+
+img {
+  width: 400px;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.drinkCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  background-color: black;
+  width: 450px;
+  height: 525px;
+}
+
+.drinkCard h2 {
+  padding-top: 2%;
+}
+
+.cocktail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
