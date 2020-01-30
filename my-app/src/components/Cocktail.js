@@ -24,7 +24,10 @@ const Cocktail = props => {
             {props.strDrink && !props.isLoading && (
                 <div className='drinkCard'>
                     <h2>{props.strDrink.strDrink}</h2>
-                    <img src={props.strDrink.strDrinkThumb}/>
+                    <img src={props.strDrink.strDrinkThumb} alt={props.strDrink.strDink}/>
+                    <ul>
+
+                    </ul>
                 </div>
                 
             )}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap');
+
 html, body {
   box-sizing: border-box;
   color: white;
@@ -11,6 +13,7 @@ html {
 
 .App {
   text-align: center;
+  font-family: 'Averia Serif Libre', cursive;
 }
 
 img {
@@ -21,7 +24,9 @@ button {
   width: 100px;
   height: 35px;
   border-radius: 5px;
+  border: 1px solid black;
   background-color: white;
+  font-family: 'Averia Serif Libre', cursive;
 }
 
 .drinkCard {
